@@ -1,0 +1,50 @@
+{
+  "mongo": {
+    "host": "0.0.0.0",
+    "port": 27017,
+    "username": "dbAdmin",
+    "password": "password",
+    "collection": "sampleData",
+    "dbName": "AlvariumDB"
+  },
+  "nextHop": {
+    "host": "0.0.0.0",
+    "port": 8090,
+    "protocol": "http"
+  },
+  "sdk" : {
+    "annotators": ["tpm","pki"],
+    "hash": {
+      "type": "sha256"
+    },
+    "signature": {
+      "public": {
+        "type": "ed25519",
+        "path": "./res/keys/ed25519/public.key"
+      },
+      "private": {
+        "type": "ed25519",
+        "path": "./res/keys/ed25519/private.key"
+      }
+    },
+    "stream": {
+      "type": "iota",
+      "config": {
+        "provider": {
+          "host": "100.80.245.205",
+          "protocol": "http",
+          "port": 8080
+        },
+        "tangle": {
+          "host": "100.80.245.118",
+          "protocol": "http",
+          "port": 8080
+        },
+        "encoding": "utf-8"
+      }
+    }
+  },
+  "logging": {
+    "minLogLevel": "debug"
+  }
+}

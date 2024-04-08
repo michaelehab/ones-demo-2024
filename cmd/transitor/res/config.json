@@ -1,0 +1,46 @@
+{
+  "sdk" : {
+    "annotators": ["tpm","pki","tls"],
+    "hash": {
+      "type": "sha256"
+    },
+    "signature": {
+      "public": {
+        "type": "ed25519",
+        "path": "./res/keys/ed25519/public.key"
+      },
+      "private": {
+        "type": "ed25519",
+        "path": "./res/keys/ed25519/private.key"
+      }
+    },
+    "stream": {
+      "type": "iota",
+      "config": {
+        "provider": {
+          "host": "100.80.245.205",
+          "protocol": "http",
+          "port": 8080
+        },
+        "tangle": {
+          "host": "100.80.245.118",
+          "protocol": "http",
+          "port": 8080
+        },
+        "encoding": "utf-8"
+      }
+    }
+  },
+  "endpoint": {
+    "certificate": "./res/cert/server.crt",
+    "key": "./res/cert/server.key",
+    "service": {
+      "host": "0.0.0.0",
+      "port": 8091,
+      "protocol": "https"
+    }
+  },
+  "logging": {
+    "minLogLevel": "debug"
+  }
+}
