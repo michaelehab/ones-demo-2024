@@ -1,0 +1,17 @@
+FROM golang:1.21
+
+ARG TAG
+
+# Copy the binary
+COPY cmd/mutator/mutator-demo /app/mutator-demo
+
+# Copy the configuration folder
+COPY cmd/mutator/res /app/res
+
+# Set the environment variable
+ENV TAG=${TAG}
+
+# Set the working directory to /app where both the executable and res folder are located
+WORKDIR /app
+
+ENTRYPOINT ["/app/mutator-demo", "-cfg", "./res/config-mqtt.json"]

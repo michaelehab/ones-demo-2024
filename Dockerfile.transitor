@@ -1,0 +1,17 @@
+FROM golang:1.21
+
+ARG TAG
+
+# Copy the binary
+COPY cmd/transitor/transitor-demo /app/transitor-demo
+
+# Copy the configuration folder
+COPY cmd/transitor/res /app/res
+
+# Set the environment variable
+ENV TAG=${TAG}
+
+# Set the working directory to /app where both the executable and res folder are located
+WORKDIR /app
+
+ENTRYPOINT ["/app/transitor-demo", "-cfg", "./res/config-mqtt.json"]
