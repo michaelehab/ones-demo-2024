@@ -56,7 +56,12 @@ pipeline {
         stage('alvarium - post-build annotations') {
             steps {
                 script {
-                    // Loop through each app and generate checksums
+                    // Check if artifact has a valid checksum... Ideally this
+                    // should be done by whatever is pulling the artifact but
+                    // alvarium currently has no way of persisting information
+                    // relating to annotator logic, which is why the checksum is
+                    // being fetched from the file system instead of a persistent
+                    // store
                     def appNames = ['creator', 'mutator', 'transitor']
                     appNames.each { appName ->
                         def artifactPath = "cmd/${appName}/${appName}-demo"
