@@ -23,9 +23,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'go build -o cmd/creator/creator-demo ./cmd/creator'
-                sh 'go build -o cmd/mutator/mutator-demo ./cmd/mutator'
-                sh 'go build -o cmd/transitor/transitor-demo ./cmd/transitor'
+                sh 'make build'
             }
         }
 
