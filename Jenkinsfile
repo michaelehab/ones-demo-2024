@@ -16,6 +16,7 @@ pipeline {
                 script {
                     def sourceCodePath = "${WORKSPACE}"
                     def sourceCodeChecksum = getSourceCodeChecksum(sourceCodePath)
+                    echo "${sourceCodeChecksum} > $JENKINS_HOME/jobs/$JOB_NAME/$BUILD_NUMBER/sc_checksum"
                 }
             }
         }
