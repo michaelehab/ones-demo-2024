@@ -13,11 +13,10 @@ pipeline {
         stage('prep - generate source code checksum') {
             steps {
                 sh 'mkdir -p $JENKINS_HOME/jobs/$JOB_NAME/$BUILD_NUMBER/'
-                sh '''find ${WORKSPACE} -type f -exec md5sum {} + |\
-                        md5sum |\
-                        cut -d" " -f1 \
-                        > $JENKINS_HOME/jobs/$JOB_NAME/$BUILD_NUMBER/sc_checksum
-                '''
+                script {
+                    def sourceCodePath = "${WORKSPACE}"
+                    def sourceCodeChecksum = getSourceCodeChecksum(sourceCodePath)
+                }
             }
         }
 
