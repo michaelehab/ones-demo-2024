@@ -1,23 +1,20 @@
 {
   "mongo": {
-    "host": "dcf-mongodb",
+    "host": "0.0.0.0",
     "port": 27017,
     "username": "dbAdmin",
     "password": "password",
     "collection": "sampleData",
-    "dbName": "dcf-mongodb"
+    "dbName": "AlvariumDB"
   },
   "nextHop": {
     "host": "0.0.0.0",
     "port": 8090,
     "protocol": "http"
   },
-  "sdk": {
+  "sdk" : {
     "layer": "app",
-    "annotators": [
-      "tpm",
-      "pki"
-    ],
+    "annotators": ["tpm","pki"],
     "hash": {
       "type": "sha256"
     },

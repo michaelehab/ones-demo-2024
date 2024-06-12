@@ -1,11 +1,7 @@
 {
-  "sdk": {
+  "sdk" : {
     "layer": "app",
-    "annotators": [
-      "tpm",
-      "pki",
-      "tls"
-    ],
+    "annotators": ["tpm","pki","tls"],
     "hash": {
       "type": "sha256"
     },
