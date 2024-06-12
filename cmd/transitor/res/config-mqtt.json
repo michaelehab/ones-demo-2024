@@ -1,11 +1,6 @@
 {
-  "sdk": {
-    "layer": "app",
-    "annotators": [
-      "tpm",
-      "pki",
-      "tls"
-    ],
+  "sdk" : {
+    "annotators": ["tpm","pki","tls"],
     "hash": {
       "type": "sha256"
     },
@@ -27,14 +22,12 @@
         "user": "mosquitto",
         "password": "",
         "provider": {
-          "host": "dcf-mqtt-broker",
+          "host": "0.0.0.0",
           "protocol": "tcp",
           "port": 1883
         },
         "cleanness": false,
-        "topics": [
-          "alvarium-test-topic"
-        ]
+        "topics": ["alvarium-test-topic"]
       }
     }
   },
