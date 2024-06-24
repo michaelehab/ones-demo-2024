@@ -38,20 +38,20 @@ pipeline {
             }
         }
 
-        stage('Dockerize') {
-            steps {
-                script {
-                    // Define the docker image names
-                    def appNames = ['creator', 'mutator', 'transitor']
-                    // Loop through each app and build the Docker image
-                    appNames.each { appName ->
-                        def dockerImage = "${appName}-demo"
-                        sh "docker build --build-arg TAG=${TAG} -t ${dockerImage} -f Dockerfile.${appName} ."
-                        // TODO: push image to a registry
-                    }
-                }
-            }
-        }
+        // stage('Dockerize') {
+        //     steps {
+        //         script {
+        //             // Define the docker image names
+        //             def appNames = ['creator', 'mutator', 'transitor']
+        //             // Loop through each app and build the Docker image
+        //             appNames.each { appName ->
+        //                 def dockerImage = "${appName}-demo"
+        //                 sh "docker build --build-arg TAG=${TAG} -t ${dockerImage} -f Dockerfile.${appName} ."
+        //                 // TODO: push image to a registry
+        //             }
+        //         }
+        //     }
+        // }
 
         stage('alvarium - post-build annotations') {
             steps {
