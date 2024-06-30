@@ -7,7 +7,7 @@ pipeline {
     }
     environment {
         GO121MODULE = 'on'
-        TAG = "${GIT_COMMIT}"
+        GIT_COMMIT = "c3212fc8e03d4e89a2971a279349726831872483"
     }
     stages {
         stage('prep - generate source code checksum') {
@@ -34,7 +34,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'make build'
+                sh 'make cmd/transitor/transitor-demo'
             }
         }
 
@@ -57,7 +57,7 @@ pipeline {
             steps {
                 script {
                     // Loop through each app and generate checksums
-                    def appNames = ['creator', 'mutator', 'transitor']
+                    def appNames = ['transitor']
                     appNames.each { appName ->
                         def artifactPath = "cmd/${appName}/${appName}-demo"
                         def checksumPath = "${JENKINS_HOME}/jobs/${JOB_NAME}/${BUILD_NUMBER}/${appName}-demo.checksum"
