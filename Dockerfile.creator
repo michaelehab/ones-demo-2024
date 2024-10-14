@@ -1,0 +1,17 @@
+FROM golang:1.21
+
+ARG TAG
+
+# Copy the binary
+COPY cmd/creator/creator-demo /app/creator-demo
+
+# Copy the configuration folder
+COPY cmd/creator/res /app/res
+
+# Set the environment variable
+ENV TAG=${TAG}
+
+# Set the working directory to /app where both the executable and res folder are located
+WORKDIR /app
+
+ENTRYPOINT ["/app/creator-demo", "-cfg", "./res/config-docker.json"]
