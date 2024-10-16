@@ -5,7 +5,7 @@ go 1.21
 require (
 	github.com/gorilla/mux v1.8.0
 	github.com/oklog/ulid/v2 v2.0.2
-	github.com/project-alvarium/alvarium-sdk-go v0.0.0-20240408195404-7aab153f3478
+	github.com/project-alvarium/alvarium-sdk-go v0.0.0-20240926013519-e37d69e165cf
 	go.mongodb.org/mongo-driver v1.7.2
 )
 
@@ -17,6 +17,7 @@ require (
 	github.com/consensys/gnark-crypto v0.12.1 // indirect
 	github.com/crate-crypto/go-kzg-4844 v0.7.0 // indirect
 	github.com/decred/dcrd/dcrec/secp256k1/v4 v4.2.0 // indirect
+	github.com/dustinxie/ecc v0.0.0-20210511000915-959544187564 // indirect
 	github.com/eclipse/paho.mqtt.golang v1.3.5 // indirect
 	github.com/ethereum/c-kzg-4844 v0.4.0 // indirect
 	github.com/ethereum/go-ethereum v1.13.10 // indirect
